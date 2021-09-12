@@ -7,6 +7,7 @@ from collections import OrderedDict
 from argparse import ArgumentParser
 import onnx
 import onnx.numpy_helper as numpy_helper
+from onnx import shape_inference
 import numpy as np
 
 def get_arguments():
