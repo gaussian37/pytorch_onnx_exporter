@@ -20,7 +20,7 @@ def get_arguments():
     args = parser.parse_args()
     return args
 
-def get_model(args, mode):
+def get_model(args):
     print("load model.")
     # add path of model to the system.
     sys.path.append(os.path.dirname(args.model_path))
@@ -42,7 +42,7 @@ def get_checkpoint(checkpoint_path):
     checkpoint = torch.load(checkpoint_path)
     return checkpoint    
 
-def get_state_dict(checkpoint, mode):
+def get_state_dict(checkpoint):
     prefix = 'module.'
     state_dict = OrderedDict(
         [(key[7:], value) if key.startswith(prefix) else (key, value)
